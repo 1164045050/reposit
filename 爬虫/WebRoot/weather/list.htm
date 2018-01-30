@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="${basePath}js/echarts.js"></script>
+</head>
+<body>
+	<a href="${basePath}weather/insertSh">点击从页面获取上海近7天的天气</a><br><br>
+	<a href="${basePath}weather/insertBj">点击从页面获取北京近7天的天气</a>
+	<div id="main" style="width: 600px;height:400px;"></div>
+	<script type="text/javascript">
+	// 基于准备好的dom，初始化echarts实例
+    var myChart = echarts.init(document.getElementById('main'));
+ // 指定图表的配置项和数据
+    var option = {
+        title: {
+            text: '学生成绩单'
+        },
+        tooltip: {},
+        legend: {
+            data:['成绩']
+        },
+        xAxis: {
+            data: ["1月","2月","3月","4月","5月","6月","7月","8月","9月","10月","11月","12月"]
+        },
+        yAxis: {},
+        series: [{
+            name: '销量',
+            type: 'bar',
+            data: [88, 76, 80, 95, 68, 70, 81, 40, 84, 72, 98, 89]
+        }]
+    };
+
+    // 使用刚指定的配置项和数据显示图表。
+    myChart.setOption(option);
+	</script>
+</body>
+</html>
